@@ -5,5 +5,6 @@ test('homepage has correct title', async ({ page }) => {
   await page.goto('https://jg847.github.io/is373hexo');
 
   // Assert the page title
-  await expect(page).toHaveTitle(/Student Guide/);
+  const title= await page.title();
+  expect(title).toBe('Student Guide');
 });
