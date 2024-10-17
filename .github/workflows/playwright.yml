@@ -19,13 +19,13 @@ jobs:
         with:
           node-version: '20' # or your desired version
 
+      - name: Fix permissions
+        run: chmod +x ./node_modules/.bin/playwright
+
       - name: Install dependencies
         run: |
           npm install
           npx playwright install-deps  # Install Playwright dependencies
-        
-      - name: Fix permissions
-        run: chmod +x ./node_modules/.bin/playwright
 
       - name: Install Playwright browsers
         run: npx playwright install
