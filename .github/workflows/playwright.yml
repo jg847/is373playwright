@@ -20,7 +20,9 @@ jobs:
           node-version: '20' # or your desired version
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npx playwright install-deps  # Install Playwright dependencies
         
       - name: Fix permissions
         run: chmod +x ./node_modules/.bin/playwright
